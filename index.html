@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowCash</title>
+  </head>
+  <body>
+    <main>
+      <div class="form">
+        <h1>FlowCash</h1>
+        
+        <input type="text" name="description" id="description" placeholder="Descrição:" />
+        <input type="number" name="amount" id="amount" placeholder="Valor:" />
+
+        <label for="type">Tipo:</label>
+        <select name="type" id="type">
+          <option value="">Selecione</option>
+          <option value="income">Receita</option>
+          <option value="expense">Despesa</option>
+        </select>
+
+        <button>Adicionar</button>
+      </div>
+      <div class="resume">
+        <div class="resume-income">
+            <h2>Receita</h2>
+            <p></p>
+        </div>
+        <div class="resume-expense">
+            <h2>Despesa</h2>
+            <p></p>
+        </div>
+        <div class="resume-balance">
+            <h2>Saldo</h2>
+            <p></p>
+        </div>
+      </div>
+      <div class="transactions">
+        <h2>Transações</h2>
+        <div class="transaction-list">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
