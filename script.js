@@ -38,7 +38,7 @@ clearInputs();
 // Update transaction list
 function renderTransactions() {
  transactionList.innerHTML = '';
-    transactions.forEach(transaction =>  {
+    transactions.forEach((transaction, index) =>  {
         const transactionItem = document.createElement('div');
             transactionItem.className = 'transaction-card';
 
@@ -46,18 +46,27 @@ function renderTransactions() {
         const amountElement = document.createElement('p');
         const typeElement = document.createElement('p');
         const dateElement = document.createElement('p');
+        const deleteButton = document.createElement('button')
 
         descriptionElement.innerText = transaction.description;
         amountElement.innerText = `R$ ${transaction.amount.toFixed(2)}`;
         typeElement.innerText = transaction.type;
         dateElement.innerText = transaction.date.toLocaleDateString();
+        deleteButton.innerText = 'Excluir';
 
         transactionItem.appendChild(descriptionElement);
         transactionItem.appendChild(amountElement);
         transactionItem.appendChild(typeElement);
         transactionItem.appendChild(dateElement);
+        transactionItem.appendChild(deleteButton);
         transactionList.appendChild(transactionItem);
+        
+        deleteButton.addEventListener('click', function() {
+            transactions.splice(index, 1);
+            renderTransactions();
+            updateSummary();
         });
+    });
 }
 
 function updateSummary() {
