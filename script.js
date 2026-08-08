@@ -8,8 +8,6 @@ const transactionList = document.querySelector('.transaction-list');
 const transactions = [];
 
 function addTransaction() {
-
-    console.log('AddTransaction executou');
  // Get input values
     const description = descriptionInput.value;
     const amount = parseFloat(amountInput.value);
@@ -31,11 +29,13 @@ function addTransaction() {
     transactions.push(transaction);
     renderTransactions();
     console.log('Transação adicionada:', transaction);
- // Update transaction list
 
- clearInputs();
+updateSummary();
+    
+clearInputs();
 }
 
+// Update transaction list
 function renderTransactions() {
  transactionList.innerHTML = '';
     transactions.forEach(transaction =>  {
@@ -58,6 +58,32 @@ function renderTransactions() {
         transactionItem.appendChild(dateElement);
         transactionList.appendChild(transactionItem);
         });
+}
+
+function updateSummary() {
+    const incomes = transactions.filter(t => t.type === 'income');
+    const expenses = transactions.filter(t => t.type === 'expense');
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    incomes.forEach(income => {
+        totalIncome += income.amount;
+    });
+
+    expenses.forEach(expense => {
+        totalExpense += expense.amount;
+    });
+
+    const balance = (totalIncome - totalExpense);
+
+    const incomeElement = document.querySelector('#total-income');
+    const expenseElement = document.querySelector('#total-expense');
+    const balanceElement = document.querySelector('#balance');
+
+    incomeElement.innerText = `R$ ${totalIncome.toFixed(2)}`;
+    expenseElement.innerText = `R$ ${totalExpense.toFixed(2)}`;
+    balanceElement.innerText = `R$ ${balance.toFixed(2)}`;
 }
 
 function clearInputs() {
