@@ -31,6 +31,8 @@ function addTransaction() {
     console.log('Transação adicionada:', transaction);
 
 updateSummary();
+
+saveTransactions();
     
 clearInputs();
 }
@@ -65,6 +67,7 @@ function renderTransactions() {
             transactions.splice(index, 1);
             renderTransactions();
             updateSummary();
+            saveTransactions();
         });
     });
 }
@@ -95,10 +98,34 @@ function updateSummary() {
     balanceElement.innerText = `R$ ${balance.toFixed(2)}`;
 }
 
+function saveTransactions() {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+function loadTransactions() {
+    const savedTransactions = localStorage.getItem('transactions');
+
+    const parsedTransactions = savedTransactions ? JSON.parse(savedTransactions) : [];
+
+    parsedTransactions.forEach(transaction => {
+        transaction.date = new Date(transaction.date);
+    });
+
+    transactions.forEach(transaction => {
+        transaction.date = new Date(transaction.date);
+    });
+    transactions.push(...parsedTransactions);
+   
+}
+
 function clearInputs() {
     descriptionInput.value = '';
     amountInput.value = '';
     typeSelect.value = '';
 }
+
+loadTransactions();
+renderTransactions();
+updateSummary();
 
 addButton.addEventListener("click", addTransaction);
