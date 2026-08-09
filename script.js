@@ -19,7 +19,7 @@ function addTransaction() {
     }
  // Create transaction object
     const transaction = {
-        id: transactions.length + 1,
+        id: crypto.randomUUID(),
         description,
         amount,
         type,
