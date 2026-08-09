@@ -52,7 +52,7 @@ function renderTransactions() {
 
     descriptionElement.innerText = transaction.description;
     amountElement.innerText = `R$ ${transaction.amount.toFixed(2)}`;
-    typeElement.innerText = transaction.type;
+    typeElement.innerText = transaction.type === "income" ? "Receita" : "Despesa";
     dateElement.innerText = transaction.date.toLocaleDateString();
     deleteButton.innerText = "Excluir";
 
