@@ -3,37 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>FlowCash</title>
   </head>
   <body>
     <main>
       <div class="form">
-        <h1>FlowCash</h1>
-        
-        <input type="text" name="description" id="description" placeholder="Descrição:" />
-        <input type="number" name="amount" id="amount" placeholder="Valor:" />
+        <h1>Flow<span>Cash</span></h1>
 
-        <label for="type">Tipo:</label>
-        <select name="type" id="type">
-          <option value="">Selecione</option>
-          <option value="income">Receita</option>
-          <option value="expense">Despesa</option>
-        </select>
+        <div class="form-fields">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            placeholder="Descrição:"
+          />
+          <input type="number" name="amount" id="amount" placeholder="Valor:" />
+        <div class="type-field">
+          <label for="type">Tipo:</label>
 
-        <button>Adicionar</button>
+          <select name="type" id="type">
+            <option value="">Selecione</option>
+            <option value="income">Receita</option>
+            <option value="expense">Despesa</option>
+          </select>
+        </div>  
+          <button>Adicionar</button>
+        </div>
       </div>
       <div class="resume">
         <div class="resume-income">
-            <h2>Receita</h2>
-            <p id="total-income">R$ 0,00</p>
+          <h2>Receita</h2>
+          <p id="total-income">R$ 0,00</p>
         </div>
         <div class="resume-expense">
-            <h2>Despesa</h2>
-            <p id="total-expense">R$ 0,00</p>
+          <h2>Despesa</h2>
+          <p id="total-expense">R$ 0,00</p>
         </div>
         <div class="resume-balance">
-            <h2>Saldo</h2>
-            <p id="balance">R$ 0,00</p>
+          <h2>Saldo</h2>
+          <p id="balance">R$ 0,00</p>
         </div>
       </div>
       <div class="transactions">

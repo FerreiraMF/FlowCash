@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background: #f1f5f9;
+    font-family: Arial, sans-serif;
+}
+
+main{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.form{
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.form-fields input, 
+.form-fields select{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+}
+
+.form-fields input:focus,
+.form-fields select:focus{
+    outline: none;
+    border-color:#10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-fields button{
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #10b981;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-fields button:hover {
+    background: #059669;
+}
+
+h1{
+    font-size: 34px;
+    color: #1f2937;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+h1 span{
+    color: #10b981;
+}
+
+.type-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.type-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
