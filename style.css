@@ -85,3 +85,44 @@ h1 span{
     font-weight: 600;
     color: #4b5563;
 }
+
+.resume {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.resume-income,
+.resume-expense,
+.resume-balance {
+    flex: 1;
+    text-align: center;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.resume h2 {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.resume p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.resume-income p {
+    color: #10b981;
+}
+
+.resume-expense p {
+    color: #ef4444;
+}
+
+.resume-balance p {
+    color: #2563eb;
+}
