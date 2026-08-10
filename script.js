@@ -43,6 +43,10 @@ function renderTransactions() {
   transactions.forEach(transaction => {
     const transactionItem = document.createElement("div");
     transactionItem.className = "transaction-card";
+    const transactionMain = document.createElement("div");
+    transactionMain.className = "transaction-main";
+    const transactionDetails = document.createElement("div");
+    transactionDetails.className = "transaction-details";
 
     const descriptionElement = document.createElement("h3");
     const amountElement = document.createElement("p");
@@ -59,12 +63,20 @@ function renderTransactions() {
     dateElement.innerText = transaction.date.toLocaleDateString();
     deleteButton.innerText = "Excluir";
 
-    transactionItem.appendChild(descriptionElement);
-    transactionItem.appendChild(amountElement);
-    transactionItem.appendChild(typeElement);
-    transactionItem.appendChild(dateElement);
-    transactionItem.appendChild(deleteButton);
+    typeElement.className = transaction.type === "income" ? "income" : "expense"
+
+    transactionMain.appendChild(descriptionElement);
+    transactionMain.appendChild(amountElement);
+
+    transactionDetails.appendChild(typeElement);
+    transactionDetails.appendChild(dateElement);
+    transactionDetails.appendChild(deleteButton);
+
+    transactionItem.appendChild(transactionMain);
+    transactionItem.appendChild(transactionDetails)
+
     transactionList.appendChild(transactionItem);
+
 
     deleteButton.addEventListener("click", function () {
       const transactionIndex = transactions.findIndex(

@@ -126,3 +126,88 @@ h1 span{
 .resume-balance p {
     color: #2563eb;
 }
+
+.transactions {
+    margin-top: 24px;
+}
+
+.transactions > h2 {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.transaction-card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transaction-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.transaction-details button {
+    margin-left: auto;
+    border: none;
+    background: #fee2e2;
+    color: #ef4444;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.transaction-main h3{
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.transaction-main p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.transaction-details p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.transaction-details .income {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.transaction-details .expense {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.transaction-details button:hover {
+    background: #fecaca;
+}
+
+.transaction-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.transaction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
