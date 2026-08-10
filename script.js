@@ -51,7 +51,10 @@ function renderTransactions() {
     const deleteButton = document.createElement("button");
 
     descriptionElement.innerText = transaction.description;
-    amountElement.innerText = `R$ ${transaction.amount.toFixed(2)}`;
+    amountElement.innerText = transaction.amount.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
     typeElement.innerText = transaction.type === "income" ? "Receita" : "Despesa";
     dateElement.innerText = transaction.date.toLocaleDateString();
     deleteButton.innerText = "Excluir";
@@ -98,9 +101,18 @@ function updateSummary() {
   const expenseElement = document.querySelector("#total-expense");
   const balanceElement = document.querySelector("#balance");
 
-  incomeElement.innerText = `R$ ${totalIncome.toFixed(2)}`;
-  expenseElement.innerText = `R$ ${totalExpense.toFixed(2)}`;
-  balanceElement.innerText = `R$ ${balance.toFixed(2)}`;
+  incomeElement.innerText = totalIncome.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  })
+  expenseElement.innerText = totalExpense.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  })
+  balanceElement.innerText = balance.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  })
 }
 
 function saveTransactions() {
