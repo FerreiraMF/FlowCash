@@ -211,3 +211,19 @@ h1 span{
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+@media (max-width: 600px){ 
+
+.resume{
+    flex-direction: column;
+}
+
+main {
+    padding: 16px;
+}
+
+h1 {
+    font-size: 28px;
+}
+    
+}
