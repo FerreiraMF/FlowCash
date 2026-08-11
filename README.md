@@ -49,7 +49,7 @@ O FlowCash foi desenvolvido para funcionar tanto em computadores quanto em dispo
 
 ## 🔗 Projeto online
 
-Em breve.
+https://ferreiramf.github.io/FlowCash/
 
 ## 👨‍💻 Autor
 
