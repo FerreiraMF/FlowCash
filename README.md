@@ -4,6 +4,10 @@ FlowCash é uma aplicação web de controle financeiro desenvolvida com HTML, CS
 
 O projeto permite cadastrar receitas e despesas, acompanhar o saldo e manter as transações salvas mesmo após atualizar ou fechar a página.
 
+## 🖥️ Preview
+
+![FlowCash](https://raw.githubusercontent.com/FerreiraMF/FlowCash/refs/heads/main/assets/desktop.png)
+
 ## 🚀 Funcionalidades
 
 - Adicionar receitas e despesas
